@@ -57,10 +57,12 @@ Commands to run:
 
 Run this to encode employee faces and save embeddings:
 
+```bash
 python Faceguard.py --build-db --db-path data/db/embeddings.pt --employees-dir data/employees
 
 2. Run Real-Time Detection
 
 Run this to start face detection using webcam (--source 0):
 
+```bash
 python Faceguard.py --detect --db-path data/db/embeddings.pt --source 0
