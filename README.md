@@ -24,9 +24,6 @@ FaceRecognition/
 │── requirements.txt # Python dependencies
 │── README.md # Documentation
 
-yaml
-Copy code
-
 ---
 
 ## ⚙️ Installation
@@ -35,25 +32,23 @@ Copy code
 ```bash
 git clone https://github.com/YourUsername/FaceRecognition.git
 cd FaceRecognition
-2. Create a virtual environment (optional but recommended)
-bash
-Copy code
+
+### 2. Create a virtual environment
 # On Windows
+```bash
 python -m venv venv
 venv\Scripts\activate
 
 # On Linux/Mac
+```bash
 python3 -m venv venv
 source venv/bin/activate
-3. Install dependencies
-bash
-Copy code
+### 3. Install dependencies
+```bash
 pip install -r requirements.txt
 🖼️ Preparing Employee Data
 Organize images inside data/employees/ in subfolders by person’s name:
 
-bash
-Copy code
 data/employees/
 ├── Alice/
 │   ├── alice1.jpg
@@ -64,25 +59,12 @@ data/employees/
 ▶️ Usage
 1. Build Employee Database
 Run this to encode employee faces and save embeddings:
-
-bash
-Copy code
+```bash
 python Faceguard.py --build-db --db-path data/db/embeddings.pt --employees-dir data/employees
 2. Run Real-Time Detection
 Run this to start face detection using the webcam (--source 0):
-
-bash
-Copy code
+```bash
 python Faceguard.py --detect --db-path data/db/embeddings.pt --source 0
 Press q to quit the application.
 
 Unknown faces will be saved automatically in data/output/.
-
-🛠️ Tech Stack
-PyTorch → FaceNet embedding model
-
-MTCNN → Face detection & alignment
-
-OpenCV → Real-time video capture & visualization
-
-NumPy / PIL → Image preprocessing
